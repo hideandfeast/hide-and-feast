@@ -2,34 +2,31 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <title>
-    {% if title %}{{ title }} – {% endif %}{{ metadata.title }}
-  </title>
-  <meta name="description" content="{{ metadata.description }}">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="stylesheet" href="/css/hf.css">
+  <title>{% if title %}{{ title }} – {% endif %}Hide & Feast</title>
+  <meta name="description" content="Tastefully Curated Travel – Value Meets Soul" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="/css/hf.css" />
 </head>
 
 <body>
-  {# ---------------- HERO ---------------- #}
+  <!-- HERO -->
   <section class="hero">
-    <h1>{{ metadata.title }}</h1>
-    <p class="tagline">{{ metadata.description }}</p>
-
+    <h1>Hide & Feast</h1>
+    <p class="tagline">Tastefully Curated Travel – Value Meets Soul</p>
     <div class="tiles">
       <a class="tile" href="/bergen/">Bergen</a>
       <a class="tile" href="/lisbon/">Lisbon</a>
     </div>
   </section>
 
-  {# ---------------- MAIN ---------------- #}
+  <!-- PAGE CONTENT -->
   <main id="main">
     {{ content | safe }}
   </main>
 
-  {# ---------------- FOOTER ---------------- #}
+  <!-- FOOTER -->
   <footer class="site-footer">
-    <small>&copy; {{ "now" | date: "%Y" }} Hide & Feast · Value Meets Soul</small>
+    <small>&copy; 2025 Hide & Feast · Value Meets Soul</small>
   </footer>
 </body>
 </html>
