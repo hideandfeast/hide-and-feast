@@ -3,7 +3,7 @@ title: Home
 layout: layouts/base.njk
 ---
 <section class="card-grid">
-  {% for post in collections.stays | reverse | limit(3) %}
+  {% for post in collections.stays | reverse %}
     <article class="card">
       <a href="{{ post.url }}">
         <img src="{{ post.data.image }}" alt="">
