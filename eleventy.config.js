@@ -8,5 +8,11 @@ export default function (eleventyConfig) {
   ); // community pattern :contentReference[oaicite:1]{index=1}
 
   /* Everything else stays default */
-    return { dir: { input: "content", output: "_site" } };
+    return { 
+    dir: { 
+      input: "content",          // where your pages live
+      includes: "../_includes",  // tell Eleventy the true includes folder
+      output: "_site"            // build folder
+    } 
+  };
 }
