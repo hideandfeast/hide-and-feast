@@ -1,0 +1,38 @@
+backend:
+  name: git-gateway   # Netlify Identity will handle auth
+media_folder: "public/img/uploads"
+public_folder: "/img/uploads"
+
+collections:
+  - name: "stays"
+    label: "Stays"
+    folder: "content/stays"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Cover Image", name: "image", widget: "image" }
+      - { label: "Booking.com URL", name: "booking", widget: "string" }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "eats"
+    label: "Eats"
+    folder: "content/eats"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Cover Image", name: "image", widget: "image" }
+      - { label: "Google-Maps URL", name: "map", widget: "string", required: false }
+      - { label: "Body", name: "body", widget: "markdown" }
+
+  - name: "guides"
+    label: "Mini Guides"
+    folder: "content/guides"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Teaser", name: "teaser", widget: "text" }
+      - { label: "Gumroad Product URL", name: "gumroad", widget: "string" }
+      - { label: "Body", name: "body", widget: "markdown" }
