@@ -2,14 +2,16 @@
 <html lang="en">
 <head>
   <meta charset="utf-8" />
-  <title>{{ metadata.title }}{% if title %} – {{ title }}{% endif %}</title>
+  <title>
+    {% if title %}{{ title }} – {% endif %}{{ metadata.title }}
+  </title>
   <meta name="description" content="{{ metadata.description }}">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="/css/hf.css">
 </head>
 
 <body>
-  <!-- HERO + DESTINATION TILES -->
+  {# ---------------- HERO ---------------- #}
   <section class="hero">
     <h1>{{ metadata.title }}</h1>
     <p class="tagline">{{ metadata.description }}</p>
@@ -20,12 +22,12 @@
     </div>
   </section>
 
-  <!-- MAIN CONTENT -->
+  {# ---------------- MAIN ---------------- #}
   <main id="main">
     {{ content | safe }}
   </main>
 
-  <!-- FOOTER -->
+  {# ---------------- FOOTER ---------------- #}
   <footer class="site-footer">
     <small>&copy; {{ "now" | date: "%Y" }} Hide & Feast · Value Meets Soul</small>
   </footer>
