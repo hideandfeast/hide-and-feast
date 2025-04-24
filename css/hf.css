@@ -1,0 +1,42 @@
+/* ==== Hide & Feast Brand Styles ==== */
+
+/* 1. Fonts (self-hosted .woff2 files go in /public/img/fonts/ ) */
+@font-face{
+  font-family:"The Seasons";
+  src:url("/public/img/fonts/TheSeasons.woff2") format("woff2");
+  font-display:swap;
+}
+@font-face{
+  font-family:"Glacial Indifference";
+  src:url("/public/img/fonts/GlacialIndifference.woff2") format("woff2");
+  font-display:swap;
+}
+
+/* 2. Colour tokens */
+:root{
+  --hf-blue:#1f628e;
+  --hf-coral:#F28A7D;
+  --hf-ivory:#fff9e9;
+  --hf-green:#6b8e71;
+}
+
+/* 3. Base typography */
+body{margin:0;font-family:"Glacial Indifference",sans-serif;line-height:1.6;}
+h1,h2,h3{font-family:"The Seasons",serif;margin:0 0 .5em;letter-spacing:-.3px;}
+
+/* 4. Hero section */
+.hero{background:var(--hf-blue);color:#fff;padding:4rem 1rem;text-align:center;}
+.hero .tagline{font-size:1.1rem;margin:.5rem 0 2rem;}
+.tiles{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;}
+.tile{background:var(--hf-ivory);color:#000;padding:1rem 2rem;border-radius:10px;
+      font-family:"The Seasons";text-decoration:none;transition:.2s;}
+.tile:hover{background:var(--hf-coral);color:#fff;}
+
+/* 5. Card grid for blog posts */
+.card-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:1.5rem;margin:3rem auto;max-width:1100px;padding:0 1rem;}
+.card{border-radius:12px;overflow:hidden;box-shadow:0 4px 12px rgba(0,0,0,.08);}
+.card img{width:100%;aspect-ratio:4/3;object-fit:cover;}
+.cat-pill{background:var(--hf-green);color:#fff;font-size:.75rem;padding:.2rem .6rem;border-radius:999px;margin:1rem;display:inline-block;}
+
+/* 6. Footer */
+.site-footer{background:var(--hf-ivory);text-align:center;padding:2rem 1rem;font-size:.85rem;margin-top:4rem;}
