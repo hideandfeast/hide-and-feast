@@ -8,5 +8,5 @@ export default function (eleventyConfig) {
   ); // community pattern :contentReference[oaicite:1]{index=1}
 
   /* Everything else stays default */
-  return { dir: { output: "_site" } };
+    return { dir: { input: "content", output: "_site" } };
 }
