@@ -1,4 +1,4 @@
-/* ==== Hide & Feast Brand Styles (full file) ==== */
+/* ==== Hide & Feast Brand Styles ==== */
 
 /* 1. Fonts */
 @font-face{
@@ -12,7 +12,7 @@
   font-display:swap;
 }
 
-/* 2. Colour tokens */
+/* 2. Colours */
 :root{
   --hf-blue:#1f628e;
   --hf-coral:#F28A7D;
@@ -24,31 +24,48 @@
 body{margin:0;font-family:"Glacial Indifference",sans-serif;line-height:1.6;background:#fff;}
 h1,h2,h3{font-family:"The Seasons",serif;margin:0 0 .5em;letter-spacing:-.3px;}
 
-/* 4. Top navigation */
-.site-nav{display:flex;gap:1rem;justify-content:center;padding:1rem;background:var(--hf-blue);}
-.site-nav a{color:#fff;text-decoration:none;padding:.55rem 1rem;border-radius:8px;transition:.2s;}
-.site-nav a:hover{background:var(--hf-coral);}
+/* 4. Announcement bar */
+.announce{text-align:center;background:var(--hf-green);color:#fff;padding:.4rem .5rem;font-size:.9rem}
+.announce a{color:#fff;text-decoration:underline}
 
-/* 5. Hero */
-.hero{
-  background:var(--hf-blue);color:#fff;min-height:45vh;
-  display:flex;flex-direction:column;justify-content:center;align-items:center;padding:3rem 1rem;
-}
-.hero .tagline{font-size:1.1rem;margin:.5rem 0 2rem;text-align:center;}
+/* 5. Top navigation */
+.site-nav{display:flex;gap:1rem;justify-content:center;padding:1rem;background:var(--hf-blue);}
+.site-nav a,.site-nav button{color:#fff;background:none;border:none;font:inherit;padding:.55rem 1rem;border-radius:8px;transition:.2s;text-decoration:none;cursor:pointer}
+.site-nav a:hover,.site-nav button:hover{background:var(--hf-coral);}
+
+/* Dropdown */
+.dropdown{position:relative}
+.dropdown:hover .menu{display:block}
+.menu{display:none;position:absolute;top:100%;left:0;background:#fff;color:#000;box-shadow:0 4px 12px rgba(0,0,0,.15);border-radius:8px;min-width:160px;z-index:10}
+.menu a{display:block;padding:.6rem 1rem;color:#000;text-decoration:none}
+.menu a:hover{background:var(--hf-ivory)}
+
+/* === HERO 2.0 === */
+.hero{position:relative;min-height:65vh;overflow:hidden}
+.hero picture,.hero video,.hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.hero-text{position:relative;z-index:2;text-align:center;color:#fff;padding:20vh 1rem 0}
+.big-head{font-family:"The Seasons",serif;font-size:clamp(2.5rem,6vw,4.5rem);margin:0}
+.sub{font-size:1.25rem;margin:.5rem 0 2rem}
+.hero::before{content:"";position:absolute;inset:0;background:rgba(0,0,0,.35)}
+
+/* 7. Tiles on hero */
 .tiles{display:flex;gap:1rem;flex-wrap:wrap;justify-content:center;}
 .tile{background:var(--hf-ivory);color:#000;padding:1rem 2rem;border-radius:10px;
       font-family:"The Seasons";text-decoration:none;transition:.2s;}
 .tile:hover{background:var(--hf-coral);color:#fff;}
 
-/* 6. Card grid for Stays/Eats/Guides */
+/* 8. Card grid */
 .card-grid{
   max-width:1100px;margin:3rem auto;
   display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:2rem;
   padding:0 1rem;
 }
-.card{border-radius:12px;overflow:hidden;box-shadow:0 4px 16px rgba(0,0,0,.08);}
+.card{border-radius:12px;overflow:hidden;box-shadow:0 4px 16px rgba(0,0,0,.08);transition:.25s transform;position:relative}
+.card:hover{transform:translateY(-6px)}
 .card img{width:100%;aspect-ratio:4/3;object-fit:cover;}
-.card h2{margin:1rem;font-size:1.15rem;font-family:"The Seasons";}
+.card h2{margin:1rem;font-size:1.25rem;font-family:"The Seasons";}
+.pill{background:var(--hf-coral);color:#fff;font-size:.7rem;padding:.25rem .6rem;border-radius:999px;position:absolute;top:.6rem;left:.6rem}
 
-/* 7. Footer */
+/* 9. Footer */
 .site-footer{background:var(--hf-ivory);text-align:center;padding:2rem 1rem;font-size:.85rem;margin-top:4rem;}
+.site-footer a{color:var(--hf-blue);text-decoration:none;margin:0 .5rem}
