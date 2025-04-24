@@ -1,4 +1,12 @@
 export default function (eleventyConfig) {
-  eleventyConfig.addPassthroughCopy("css");   // copy brand stylesheet
-  return { dir: { output: "_site" } };        // otherwise use Eleventy defaults
+  /* Copy brand stylesheet */
+  eleventyConfig.addPassthroughCopy("css");
+
+  /* Provide the only custom filter the home-page uses */
+  eleventyConfig.addNunjucksFilter("limit", (array, n) =>
+    Array.isArray(array) ? array.slice(0, n) : []
+  ); // community pattern :contentReference[oaicite:1]{index=1}
+
+  /* Everything else stays default */
+  return { dir: { output: "_site" } };
 }
