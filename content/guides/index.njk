@@ -1,1 +1,17 @@
-```njk --- title: Mini Guides layout: ../_includes/layouts/base.njk --- <h2>Mini Guides</h2><section class="card-grid">{% for post in collections.guides
+---
+title: Mini Guides
+layout: ../_includes/layouts/base.njk
+---
+
+<h2>Mini Guides</h2>
+
+<section class="card-grid">
+{% for post in collections.guides | reverse %}
+  <article class="card">
+    <a href="{{ post.url }}">
+      <img src="{{ post.data.image }}" alt="">
+      <h2>{{ post.data.title }}</h2>
+    </a>
+  </article>
+{% endfor %}
+</section>
