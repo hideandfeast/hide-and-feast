@@ -1,0 +1,18 @@
+---
+title: Bergen
+layout: ../_includes/layouts/base.njk
+---
+<h2>Where to Stay & Eat in Bergen</h2>
+
+<section class="card-grid">
+{% for post in collections.stays | reverse %}
+  {% if post.data.city == "Bergen" %}
+    <article class="card">
+      <a href="{{ post.url }}">
+        <img src="{{ post.data.image }}" alt="">
+        <h2>{{ post.data.title }}</h2>
+      </a>
+    </article>
+  {% endif %}
+{% endfor %}
+</section>
