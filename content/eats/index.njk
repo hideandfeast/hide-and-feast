@@ -1,1 +1,17 @@
-	```njk --- title: All Eats layout: ../_includes/layouts/base.njk --- <h2>All Eats</h2><section class="card-grid">{% for post in collections.eats
+---
+title: All Eats
+layout: ../_includes/layouts/base.njk
+---
+
+<h2>All Eats</h2>
+
+<section class="card-grid">
+{% for post in collections.eats | reverse %}
+  <article class="card">
+    <a href="{{ post.url }}">
+      <img src="{{ post.data.image }}" alt="">
+      <h2>{{ post.data.title }}</h2>
+    </a>
+  </article>
+{% endfor %}
+</section>
