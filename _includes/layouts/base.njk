@@ -17,18 +17,23 @@
     <a href="/guides/">Guides</a>
   </header>
 
-  <!-- HERO -->
+<!-- HERO -->
 <section class="hero">
-  <picture>
-    <source srcset="/public/img/hero.mp4" type="video/mp4">
+
+  <!-- autoplaying video -->
+  <video class="hero-vid" autoplay muted loop playsinline>
+    <source src="/public/img/hero.mp4" type="video/mp4">
+    <!-- If video can’t play, this image shows instead -->
     <img src="/public/img/hero.jpg" alt="Scenic coastline">
-  </picture>
+  </video>
 
   <div class="hero-text">
     <h1 class="big-head">Hide&nbsp;&amp;&nbsp;Feast</h1>
     <p class="sub">Tastefully Curated Travel — Value Meets Soul</p>
   </div>
+
 </section>
+
 
   <!-- PAGE CONTENT -->
   <main id="main">
